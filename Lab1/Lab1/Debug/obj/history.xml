@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DM4 -I..\..\..\..\..\Users\frede\Documents\Github\EmbeddedProgramming\inc -I..\..\..\..\..\Users\frede\Documents\Github\EmbeddedProgramming\Lab1">
+      <target file="main.o" lastModified="1529cff29d9">
+         <source file="..\..\..\main.c" lastModified="1529cff1de5"/>
+      </target>
+      <target file="startup_Cortex_M4.o" lastModified="1529cfd0266">
+         <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1529cec6012"/>
+      </target>
+   </processor>
+</history>

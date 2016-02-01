@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\Users\frede\Documents\Github\EmbeddedProgramming\inc /I..\..\..\..\..\Users\frede\Documents\Github\EmbeddedProgramming\Lab1">
+      <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1529cec6012">
+      </source>
+   </includePath>
+</dependencies>

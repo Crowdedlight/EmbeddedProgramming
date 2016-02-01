@@ -1,0 +1,191 @@
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ..\obj\main.o
+ .data          0x00000000        0x0 ..\obj\main.o
+ .bss           0x00000000        0x0 ..\obj\main.o
+ .text          0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .data          0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .bss           0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x20000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x20008000                _eram = 0x20008000
+
+.text           0x00000000      0x104
+ *(.isr_vector)
+ .isr_vector    0x00000000       0x40 ..\obj\startup_Cortex_M4.o
+                0x00000000                g_pfnVectors
+ *(.text*)
+ .text.main     0x00000040       0x60 ..\obj\main.o
+                0x00000040                main
+ .text.Default_Reset_Handler
+                0x000000a0       0x5c ..\obj\startup_Cortex_M4.o
+                0x000000a0                Default_Reset_Handler
+                0x000000a0                Reset_Handler
+ .text.Default_Handler
+                0x000000fc        0x8 ..\obj\startup_Cortex_M4.o
+                0x000000fc                DebugMon_Handler
+                0x000000fc                HardFault_Handler
+                0x000000fc                SysTick_Handler
+                0x000000fc                PendSV_Handler
+                0x000000fc                NMI_Handler
+                0x000000fc                UsageFault_Handler
+                0x000000fc                MemManage_Handler
+                0x000000fc                SVC_Handler
+                0x000000fc                BusFault_Handler
+ *(.init)
+ *(.fini)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ *(.eh_fram e*)
+
+.glue_7         0x00000104        0x0
+ .glue_7        0x00000104        0x0 linker stubs
+
+.glue_7t        0x00000104        0x0
+ .glue_7t       0x00000104        0x0 linker stubs
+
+.vfp11_veneer   0x00000104        0x0
+ .vfp11_veneer  0x00000104        0x0 linker stubs
+
+.v4_bx          0x00000104        0x0
+ .v4_bx         0x00000104        0x0 linker stubs
+
+.iplt           0x00000104        0x0
+ .iplt          0x00000104        0x0 ..\obj\main.o
+
+.rel.dyn        0x00000104        0x0
+ .rel.iplt      0x00000104        0x0 ..\obj\main.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000104                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000104                __exidx_end = .
+                0x00000104                __etext = .
+                0x00000104                _sidata = __etext
+
+.data           0x20000000        0x0 load address 0x00000104
+                0x20000000                __data_start__ = .
+                0x20000000                _sdata = __data_start__
+ *(vtable)
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                [!provide]                PROVIDE (__preinit_array_end, .)
+                0x20000000                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                [!provide]                PROVIDE (__init_array_end, .)
+                0x20000000                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                [!provide]                PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __data_end__ = .
+                0x20000000                _edata = __data_end__
+
+.igot.plt       0x20000000        0x0
+ .igot.plt      0x20000000        0x0 ..\obj\main.o
+
+.bss            0x20000000        0x0
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __bss_start__ = .
+                0x20000000                _sbss = __bss_start__
+ *(.bss*)
+ *(COMMON)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __bss_end__ = .
+                0x20000000                _ebss = __bss_end__
+
+.heap           0x20000000        0x0
+                0x20000000                __end__ = .
+                0x20000000                _end = __end__
+                0x20000000                end = __end__
+ *(.heap*)
+                0x20000000                __HeapLimit = .
+
+.co_stack       0x20000000      0x400
+                0x20000000                . = ALIGN (0x8)
+ *(.co_stack .co_stack.*)
+ .co_stack      0x20000000      0x400 ..\obj\startup_Cortex_M4.o
+                0x20000000                pulStack
+                0x20008000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
+                0x20007c00                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                [!provide]                PROVIDE (__stack, __StackTop)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
+LOAD ..\obj\main.o
+LOAD ..\obj\startup_Cortex_M4.o
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7e-m\libc.a
+END GROUP
+OUTPUT(Lab1.elf elf32-littlearm)
+
+.debug_info     0x00000000      0x18a
+ .debug_info    0x00000000       0xa2 ..\obj\main.o
+ .debug_info    0x000000a2       0xe8 ..\obj\startup_Cortex_M4.o
+
+.debug_abbrev   0x00000000      0x105
+ .debug_abbrev  0x00000000       0x5e ..\obj\main.o
+ .debug_abbrev  0x0000005e       0xa7 ..\obj\startup_Cortex_M4.o
+
+.debug_aranges  0x00000000       0x48
+ .debug_aranges
+                0x00000000       0x20 ..\obj\main.o
+ .debug_aranges
+                0x00000020       0x28 ..\obj\startup_Cortex_M4.o
+
+.debug_ranges   0x00000000       0x28
+ .debug_ranges  0x00000000       0x10 ..\obj\main.o
+ .debug_ranges  0x00000010       0x18 ..\obj\startup_Cortex_M4.o
+
+.debug_line     0x00000000      0x1f4
+ .debug_line    0x00000000      0x143 ..\obj\main.o
+ .debug_line    0x00000143       0xb1 ..\obj\startup_Cortex_M4.o
+
+.debug_str      0x00000000      0x1eb
+ .debug_str     0x00000000      0x122 ..\obj\main.o
+                                0x15f (size before relaxing)
+ .debug_str     0x00000122       0xc9 ..\obj\startup_Cortex_M4.o
+                                0x157 (size before relaxing)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e ..\obj\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f ..\obj\startup_Cortex_M4.o
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\main.o
+ .ARM.attributes
+                0x00000033       0x33 ..\obj\startup_Cortex_M4.o
+
+.debug_frame    0x00000000       0x78
+ .debug_frame   0x00000000       0x2c ..\obj\main.o
+ .debug_frame   0x0000002c       0x4c ..\obj\startup_Cortex_M4.o
