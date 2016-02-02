@@ -1,0 +1,217 @@
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ..\obj\main.o
+ .text          0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .data          0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .bss           0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x20000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x20008000                _eram = 0x20008000
+
+.text           0x00000000      0x364
+ *(.isr_vector)
+ .isr_vector    0x00000000       0x40 ..\obj\startup_Cortex_M4.o
+                0x00000000                g_pfnVectors
+ *(.text*)
+ .text.SysTick_Handler
+                0x00000040       0x34 ..\obj\main.o
+                0x00000040                SysTick_Handler
+ .text.enable_global_int
+                0x00000074       0x10 ..\obj\main.o
+                0x00000074                enable_global_int
+ .text.disable_global_int
+                0x00000084       0x10 ..\obj\main.o
+                0x00000084                disable_global_int
+ .text.SysTickInit
+                0x00000094       0x84 ..\obj\main.o
+                0x00000094                SysTickInit
+ .text.main     0x00000118      0x124 ..\obj\main.o
+                0x00000118                main
+ .text.oneClick
+                0x0000023c       0x7c ..\obj\main.o
+                0x0000023c                oneClick
+ .text.doubleClick
+                0x000002b8       0x28 ..\obj\main.o
+                0x000002b8                doubleClick
+ .text.enable_automode
+                0x000002e0       0x20 ..\obj\main.o
+                0x000002e0                enable_automode
+ .text.Default_Reset_Handler
+                0x00000300       0x5c ..\obj\startup_Cortex_M4.o
+                0x00000300                Default_Reset_Handler
+                0x00000300                Reset_Handler
+ .text.Default_Handler
+                0x0000035c        0x8 ..\obj\startup_Cortex_M4.o
+                0x0000035c                HardFault_Handler
+                0x0000035c                PendSV_Handler
+                0x0000035c                NMI_Handler
+                0x0000035c                UsageFault_Handler
+                0x0000035c                MemManage_Handler
+                0x0000035c                SVC_Handler
+                0x0000035c                BusFault_Handler
+                0x0000035c                DebugMon_Handler
+ *(.init)
+ *(.fini)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ *(.eh_fram e*)
+
+.glue_7         0x00000364        0x0
+ .glue_7        0x00000364        0x0 linker stubs
+
+.glue_7t        0x00000364        0x0
+ .glue_7t       0x00000364        0x0 linker stubs
+
+.vfp11_veneer   0x00000364        0x0
+ .vfp11_veneer  0x00000364        0x0 linker stubs
+
+.v4_bx          0x00000364        0x0
+ .v4_bx         0x00000364        0x0 linker stubs
+
+.iplt           0x00000364        0x0
+ .iplt          0x00000364        0x0 ..\obj\main.o
+
+.rel.dyn        0x00000364        0x0
+ .rel.iplt      0x00000364        0x0 ..\obj\main.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000364                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000364                __exidx_end = .
+                0x00000364                __etext = .
+                0x00000364                _sidata = __etext
+
+.data           0x20000000       0x20 load address 0x00000364
+                0x20000000                __data_start__ = .
+                0x20000000                _sdata = __data_start__
+ *(vtable)
+ *(.data*)
+ .data          0x20000000       0x20 ..\obj\main.o
+                0x20000000                colorArray
+                0x2000001c                color_dic
+                0x20000020                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                [!provide]                PROVIDE (__preinit_array_end, .)
+                0x20000020                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                [!provide]                PROVIDE (__init_array_end, .)
+                0x20000020                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                [!provide]                PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+                0x20000020                . = ALIGN (0x4)
+                0x20000020                __data_end__ = .
+                0x20000020                _edata = __data_end__
+
+.igot.plt       0x20000020        0x0 load address 0x00000384
+ .igot.plt      0x20000020        0x0 ..\obj\main.o
+
+.bss            0x20000020        0xc load address 0x00000384
+                0x20000020                . = ALIGN (0x4)
+                0x20000020                __bss_start__ = .
+                0x20000020                _sbss = __bss_start__
+ *(.bss*)
+ .bss           0x20000020        0xc ..\obj\main.o
+                0x20000020                click_counter
+                0x20000024                currentColor
+                0x20000028                automode
+ *(COMMON)
+                0x2000002c                . = ALIGN (0x4)
+                0x2000002c                __bss_end__ = .
+                0x2000002c                _ebss = __bss_end__
+
+.heap           0x2000002c        0x0
+                0x2000002c                __end__ = .
+                0x2000002c                _end = __end__
+                0x2000002c                end = __end__
+ *(.heap*)
+                0x2000002c                __HeapLimit = .
+
+.co_stack       0x2000002c      0x404 load address 0x00000390
+                0x20000030                . = ALIGN (0x8)
+ *fill*         0x2000002c        0x4 
+ *(.co_stack .co_stack.*)
+ .co_stack      0x20000030      0x400 ..\obj\startup_Cortex_M4.o
+                0x20000030                pulStack
+                0x20008000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
+                0x20007bfc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                [!provide]                PROVIDE (__stack, __StackTop)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
+LOAD ..\obj\main.o
+LOAD ..\obj\startup_Cortex_M4.o
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7e-m\libc.a
+END GROUP
+OUTPUT(Assignment1.elf elf32-littlearm)
+
+.debug_info     0x00000000      0x329
+ .debug_info    0x00000000      0x241 ..\obj\main.o
+ .debug_info    0x00000241       0xe8 ..\obj\startup_Cortex_M4.o
+
+.debug_abbrev   0x00000000      0x1c5
+ .debug_abbrev  0x00000000      0x11e ..\obj\main.o
+ .debug_abbrev  0x0000011e       0xa7 ..\obj\startup_Cortex_M4.o
+
+.debug_aranges  0x00000000       0x80
+ .debug_aranges
+                0x00000000       0x58 ..\obj\main.o
+ .debug_aranges
+                0x00000058       0x28 ..\obj\startup_Cortex_M4.o
+
+.debug_ranges   0x00000000       0x60
+ .debug_ranges  0x00000000       0x48 ..\obj\main.o
+ .debug_ranges  0x00000048       0x18 ..\obj\startup_Cortex_M4.o
+
+.debug_line     0x00000000      0x307
+ .debug_line    0x00000000      0x24f ..\obj\main.o
+ .debug_line    0x0000024f       0xb8 ..\obj\startup_Cortex_M4.o
+
+.debug_str      0x00000000      0x2a9
+ .debug_str     0x00000000      0x1e2 ..\obj\main.o
+                                0x228 (size before relaxing)
+ .debug_str     0x000001e2       0xc7 ..\obj\startup_Cortex_M4.o
+                                0x15e (size before relaxing)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e ..\obj\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f ..\obj\startup_Cortex_M4.o
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\main.o
+ .ARM.attributes
+                0x00000033       0x33 ..\obj\startup_Cortex_M4.o
+
+.debug_frame    0x00000000      0x160
+ .debug_frame   0x00000000      0x114 ..\obj\main.o
+ .debug_frame   0x00000114       0x4c ..\obj\startup_Cortex_M4.o

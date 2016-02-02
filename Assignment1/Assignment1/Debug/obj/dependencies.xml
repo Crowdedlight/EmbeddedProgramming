@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\..\Users\frede\Documents\Github\EmbeddedProgramming\inc /I..\..\..\..\..\Users\frede\Documents\Github\EmbeddedProgramming\Assignment1">
+      <source file="..\..\..\main.c" lastModified="152a2421ce4">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+      </source>
+      <source file="..\..\..\..\inc\tm4c123gh6pm.h" lastModified="1529cdd9a9f">
+      </source>
+      <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1529d6ec950">
+      </source>
+   </includePath>
+</dependencies>

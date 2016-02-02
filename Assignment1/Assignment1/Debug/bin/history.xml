@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="5.2.1 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=Assignment1.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Assignment1 -TC:\CooCox\CoIDE\configuration\ProgramData\Assignment1/arm-gcc-link.ld -g">
+      <target file="Assignment1.elf" lastModified="152a27d3e8a">
+         <source file="..\obj\main.o" lastModified="152a27d3c94"/>
+         <source file="..\obj\startup_Cortex_M4.o" lastModified="1529da5fc2d"/>
+      </target>
+   </processor>
+</history>
