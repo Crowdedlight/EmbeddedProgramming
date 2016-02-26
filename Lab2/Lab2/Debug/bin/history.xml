@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="5.2.1 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=Lab2.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Lab2 -TC:\CooCox\CoIDE\configuration\ProgramData\Lab2/arm-gcc-link.ld -g">
+      <target file="Lab2.elf" lastModified="152c13b8e3f">
+         <source file="..\obj\main.o" lastModified="152c13b8c5a"/>
+         <source file="..\obj\startup_Cortex_M4.o" lastModified="152c13520fe"/>
+      </target>
+   </processor>
+</history>

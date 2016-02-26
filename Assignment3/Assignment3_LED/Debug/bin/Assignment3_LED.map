@@ -1,0 +1,460 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+msg_state           0x40              ..\obj\messages.o
+POT                 0x20              ..\obj\swtimers.o
+msg_event           0x40              ..\obj\messages.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ..\obj\messages.o
+ .data          0x00000000        0x0 ..\obj\messages.o
+ .bss           0x00000000        0x0 ..\obj\messages.o
+ .text          0x00000000        0x0 ..\obj\task_lcd.o
+ .text          0x00000000        0x0 ..\obj\main.o
+ .bss           0x00000000        0x0 ..\obj\main.o
+ .text          0x00000000        0x0 ..\obj\time_functions.o
+ .data          0x00000000        0x0 ..\obj\time_functions.o
+ .bss           0x00000000        0x0 ..\obj\time_functions.o
+ .text          0x00000000        0x0 ..\obj\task_button.o
+ .data          0x00000000        0x0 ..\obj\task_button.o
+ .text          0x00000000        0x0 ..\obj\gpio.o
+ .data          0x00000000        0x0 ..\obj\gpio.o
+ .bss           0x00000000        0x0 ..\obj\gpio.o
+ .text          0x00000000        0x0 ..\obj\swtimers.o
+ .data          0x00000000        0x0 ..\obj\swtimers.o
+ .bss           0x00000000        0x0 ..\obj\swtimers.o
+ .text.swtimer  0x00000000       0x20 ..\obj\swtimers.o
+ .text.init_swtimers
+                0x00000000       0x3c ..\obj\swtimers.o
+ .text          0x00000000        0x0 ..\obj\task_rtc.o
+ .data          0x00000000        0x0 ..\obj\task_rtc.o
+ .text          0x00000000        0x0 ..\obj\lcd.o
+ .text.lcd_setup
+                0x00000000       0xc4 ..\obj\lcd.o
+ .text          0x00000000        0x0 ..\obj\task_set_time.o
+ .data          0x00000000        0x0 ..\obj\task_set_time.o
+ .text          0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .data          0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .bss           0x00000000        0x0 ..\obj\startup_Cortex_M4.o
+ .text          0x00000000        0x0 ..\obj\systick.o
+ .data          0x00000000        0x0 ..\obj\systick.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00008000         xr
+ram              0x20000000         0x00000800         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x20000800                _eram = 0x20000800
+
+.text           0x00000000      0xb98
+ *(.isr_vector)
+ .isr_vector    0x00000000       0x40 ..\obj\startup_Cortex_M4.o
+                0x00000000                g_pfnVectors
+ *(.text*)
+ .text.get_msg_event
+                0x00000040       0x40 ..\obj\messages.o
+                0x00000040                get_msg_event
+ .text.put_msg_event
+                0x00000080       0x2c ..\obj\messages.o
+                0x00000080                put_msg_event
+ .text.get_msg_state
+                0x000000ac       0x2c ..\obj\messages.o
+                0x000000ac                get_msg_state
+ .text.put_msg_state
+                0x000000d8       0x2c ..\obj\messages.o
+                0x000000d8                put_msg_state
+ .text.task_lcd
+                0x00000104       0xc4 ..\obj\task_lcd.o
+                0x00000104                task_lcd
+ .text.lcd_toggle_col
+                0x000001c8       0x38 ..\obj\task_lcd.o
+                0x000001c8                lcd_toggle_col
+ .text.lcd_update
+                0x00000200       0xc0 ..\obj\task_lcd.o
+                0x00000200                lcd_update
+ .text.main     0x000002c0       0x88 ..\obj\main.o
+                0x000002c0                main
+ .text.time_incr
+                0x00000348       0x68 ..\obj\time_functions.o
+                0x00000348                time_incr
+ .text.time_decr
+                0x000003b0       0x64 ..\obj\time_functions.o
+                0x000003b0                time_decr
+ .text.button_pushed
+                0x00000414       0x24 ..\obj\task_button.o
+                0x00000414                button_pushed
+ .text.task_button
+                0x00000438      0x120 ..\obj\task_button.o
+                0x00000438                task_button
+ .text.init_gpio
+                0x00000558       0x54 ..\obj\gpio.o
+                0x00000558                init_gpio
+ .text.start_swtimer
+                0x000005ac       0x3c ..\obj\swtimers.o
+                0x000005ac                start_swtimer
+ .text.swt_ctrl
+                0x000005e8       0x60 ..\obj\swtimers.o
+                0x000005e8                swt_ctrl
+ .text.task_rtc
+                0x00000648       0xa8 ..\obj\task_rtc.o
+                0x00000648                task_rtc
+ .text.delay    0x000006f0       0x28 ..\obj\lcd.o
+                0x000006f0                delay
+ .text.lcd_send
+                0x00000718       0x50 ..\obj\lcd.o
+                0x00000718                lcd_send
+ .text.lcd_single_command
+                0x00000768       0x30 ..\obj\lcd.o
+                0x00000768                lcd_single_command
+ .text.lcd_command
+                0x00000798       0x40 ..\obj\lcd.o
+                0x00000798                lcd_command
+ .text.lcd_write
+                0x000007d8       0x40 ..\obj\lcd.o
+                0x000007d8                lcd_write
+ .text.lcd_write_string
+                0x00000818       0x38 ..\obj\lcd.o
+                0x00000818                lcd_write_string
+ .text.lcd_clear_display
+                0x00000850       0x2c ..\obj\lcd.o
+                0x00000850                lcd_clear_display
+ .text.lcd_set_cursor
+                0x0000087c       0x4c ..\obj\lcd.o
+                0x0000087c                lcd_set_cursor
+ .text.lcd_setup_sm
+                0x000008c8       0xe8 ..\obj\lcd.o
+                0x000008c8                lcd_setup_sm
+ .text.task_set_time
+                0x000009b0       0xbc ..\obj\task_set_time.o
+                0x000009b0                task_set_time
+ .text.Default_Reset_Handler
+                0x00000a6c       0x5c ..\obj\startup_Cortex_M4.o
+                0x00000a6c                Default_Reset_Handler
+                0x00000a6c                Reset_Handler
+ .text.Default_Handler
+                0x00000ac8        0x8 ..\obj\startup_Cortex_M4.o
+                0x00000ac8                HardFault_Handler
+                0x00000ac8                PendSV_Handler
+                0x00000ac8                NMI_Handler
+                0x00000ac8                UsageFault_Handler
+                0x00000ac8                MemManage_Handler
+                0x00000ac8                SVC_Handler
+                0x00000ac8                BusFault_Handler
+                0x00000ac8                DebugMon_Handler
+ .text.SysTick_Handler
+                0x00000ad0       0x24 ..\obj\systick.o
+                0x00000ad0                SysTick_Handler
+ .text.enable_global_int
+                0x00000af4       0x10 ..\obj\systick.o
+                0x00000af4                enable_global_int
+ .text.disable_global_int
+                0x00000b04       0x10 ..\obj\systick.o
+                0x00000b04                disable_global_int
+ .text.init_systick
+                0x00000b14       0x84 ..\obj\systick.o
+                0x00000b14                init_systick
+ *(.init)
+ *(.fini)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ *(.eh_fram e*)
+
+.glue_7         0x00000b98        0x0
+ .glue_7        0x00000b98        0x0 linker stubs
+
+.glue_7t        0x00000b98        0x0
+ .glue_7t       0x00000b98        0x0 linker stubs
+
+.vfp11_veneer   0x00000b98        0x0
+ .vfp11_veneer  0x00000b98        0x0 linker stubs
+
+.v4_bx          0x00000b98        0x0
+ .v4_bx         0x00000b98        0x0 linker stubs
+
+.iplt           0x00000b98        0x0
+ .iplt          0x00000b98        0x0 ..\obj\messages.o
+
+.rel.dyn        0x00000b98        0x0
+ .rel.iplt      0x00000b98        0x0 ..\obj\messages.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000b98                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000b98                __exidx_end = .
+                0x00000b98                __etext = .
+                0x00000b98                _sidata = __etext
+
+.data           0x20000000        0x8 load address 0x00000b98
+                0x20000000                __data_start__ = .
+                0x20000000                _sdata = __data_start__
+ *(vtable)
+ *(.data*)
+ .data          0x20000000        0x1 ..\obj\task_lcd.o
+ *fill*         0x20000001        0x1 
+ .data          0x20000002        0x2 ..\obj\main.o
+                0x20000002                alive_timer
+ .data          0x20000004        0x1 ..\obj\lcd.o
+                0x20000008                . = ALIGN (0x4)
+ *fill*         0x20000005        0x3 
+                [!provide]                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                [!provide]                PROVIDE (__preinit_array_end, .)
+                0x20000008                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                [!provide]                PROVIDE (__init_array_end, .)
+                0x20000008                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                [!provide]                PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+                0x20000008                . = ALIGN (0x4)
+                0x20000008                __data_end__ = .
+                0x20000008                _edata = __data_end__
+
+.igot.plt       0x20000008        0x0 load address 0x00000ba0
+ .igot.plt      0x20000008        0x0 ..\obj\messages.o
+
+.bss            0x20000008       0xac load address 0x00000ba0
+                0x20000008                . = ALIGN (0x4)
+                0x20000008                __bss_start__ = .
+                0x20000008                _sbss = __bss_start__
+ *(.bss*)
+ .bss           0x20000008        0x1 ..\obj\task_lcd.o
+ .bss           0x20000009        0x1 ..\obj\task_button.o
+ .bss           0x2000000a        0x1 ..\obj\task_rtc.o
+ *fill*         0x2000000b        0x1 
+ .bss           0x2000000c        0x4 ..\obj\lcd.o
+ .bss           0x20000010        0x1 ..\obj\task_set_time.o
+ *fill*         0x20000011        0x1 
+ .bss           0x20000012        0x2 ..\obj\systick.o
+                0x20000012                ticks
+ *(COMMON)
+ COMMON         0x20000014       0x80 ..\obj\messages.o
+                0x20000014                msg_state
+                0x20000054                msg_event
+ COMMON         0x20000094       0x20 ..\obj\swtimers.o
+                0x20000094                POT
+                0x200000b4                . = ALIGN (0x4)
+                0x200000b4                __bss_end__ = .
+                0x200000b4                _ebss = __bss_end__
+
+.heap           0x200000b4        0x0
+                0x200000b4                __end__ = .
+                0x200000b4                _end = __end__
+                0x200000b4                end = __end__
+ *(.heap*)
+                0x200000b4                __HeapLimit = .
+
+.co_stack       0x200000b4      0x404 load address 0x00000c4c
+                0x200000b8                . = ALIGN (0x8)
+ *fill*         0x200000b4        0x4 
+ *(.co_stack .co_stack.*)
+ .co_stack      0x200000b8      0x400 ..\obj\startup_Cortex_M4.o
+                0x200000b8                pulStack
+                0x20000800                __StackTop = (ORIGIN (ram) + LENGTH (ram))
+                0x200003fc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                [!provide]                PROVIDE (__stack, __StackTop)
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
+LOAD ..\obj\messages.o
+LOAD ..\obj\task_lcd.o
+LOAD ..\obj\main.o
+LOAD ..\obj\time_functions.o
+LOAD ..\obj\task_button.o
+LOAD ..\obj\gpio.o
+LOAD ..\obj\swtimers.o
+LOAD ..\obj\task_rtc.o
+LOAD ..\obj\lcd.o
+LOAD ..\obj\task_set_time.o
+LOAD ..\obj\startup_Cortex_M4.o
+LOAD ..\obj\systick.o
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/armv7e-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.2 2015q4/bin/../lib/gcc/arm-none-eabi/5.2.1/../../../../arm-none-eabi/lib/armv7e-m\libc.a
+END GROUP
+OUTPUT(Assignment3_LED.elf elf32-littlearm)
+
+.debug_info     0x00000000      0xe4f
+ .debug_info    0x00000000      0x18a ..\obj\messages.o
+ .debug_info    0x0000018a      0x14d ..\obj\task_lcd.o
+ .debug_info    0x000002d7      0x13d ..\obj\main.o
+ .debug_info    0x00000414      0x105 ..\obj\time_functions.o
+ .debug_info    0x00000519       0xeb ..\obj\task_button.o
+ .debug_info    0x00000604       0xac ..\obj\gpio.o
+ .debug_info    0x000006b0      0x190 ..\obj\swtimers.o
+ .debug_info    0x00000840       0xdc ..\obj\task_rtc.o
+ .debug_info    0x0000091c      0x29a ..\obj\lcd.o
+ .debug_info    0x00000bb6       0xc0 ..\obj\task_set_time.o
+ .debug_info    0x00000c76       0xe8 ..\obj\startup_Cortex_M4.o
+ .debug_info    0x00000d5e       0xf1 ..\obj\systick.o
+
+.debug_abbrev   0x00000000      0x773
+ .debug_abbrev  0x00000000       0xbb ..\obj\messages.o
+ .debug_abbrev  0x000000bb       0xa6 ..\obj\task_lcd.o
+ .debug_abbrev  0x00000161       0xb9 ..\obj\main.o
+ .debug_abbrev  0x0000021a       0x89 ..\obj\time_functions.o
+ .debug_abbrev  0x000002a3       0x83 ..\obj\task_button.o
+ .debug_abbrev  0x00000326       0x5c ..\obj\gpio.o
+ .debug_abbrev  0x00000382       0xef ..\obj\swtimers.o
+ .debug_abbrev  0x00000471       0x7a ..\obj\task_rtc.o
+ .debug_abbrev  0x000004eb       0xfb ..\obj\lcd.o
+ .debug_abbrev  0x000005e6       0x6b ..\obj\task_set_time.o
+ .debug_abbrev  0x00000651       0xa7 ..\obj\startup_Cortex_M4.o
+ .debug_abbrev  0x000006f8       0x7b ..\obj\systick.o
+
+.debug_aranges  0x00000000      0x238
+ .debug_aranges
+                0x00000000       0x38 ..\obj\messages.o
+ .debug_aranges
+                0x00000038       0x30 ..\obj\task_lcd.o
+ .debug_aranges
+                0x00000068       0x20 ..\obj\main.o
+ .debug_aranges
+                0x00000088       0x28 ..\obj\time_functions.o
+ .debug_aranges
+                0x000000b0       0x28 ..\obj\task_button.o
+ .debug_aranges
+                0x000000d8       0x20 ..\obj\gpio.o
+ .debug_aranges
+                0x000000f8       0x38 ..\obj\swtimers.o
+ .debug_aranges
+                0x00000130       0x20 ..\obj\task_rtc.o
+ .debug_aranges
+                0x00000150       0x68 ..\obj\lcd.o
+ .debug_aranges
+                0x000001b8       0x20 ..\obj\task_set_time.o
+ .debug_aranges
+                0x000001d8       0x28 ..\obj\startup_Cortex_M4.o
+ .debug_aranges
+                0x00000200       0x38 ..\obj\systick.o
+
+.debug_ranges   0x00000000      0x178
+ .debug_ranges  0x00000000       0x28 ..\obj\messages.o
+ .debug_ranges  0x00000028       0x20 ..\obj\task_lcd.o
+ .debug_ranges  0x00000048       0x10 ..\obj\main.o
+ .debug_ranges  0x00000058       0x18 ..\obj\time_functions.o
+ .debug_ranges  0x00000070       0x18 ..\obj\task_button.o
+ .debug_ranges  0x00000088       0x10 ..\obj\gpio.o
+ .debug_ranges  0x00000098       0x28 ..\obj\swtimers.o
+ .debug_ranges  0x000000c0       0x10 ..\obj\task_rtc.o
+ .debug_ranges  0x000000d0       0x58 ..\obj\lcd.o
+ .debug_ranges  0x00000128       0x10 ..\obj\task_set_time.o
+ .debug_ranges  0x00000138       0x18 ..\obj\startup_Cortex_M4.o
+ .debug_ranges  0x00000150       0x28 ..\obj\systick.o
+
+.debug_line     0x00000000      0xf7a
+ .debug_line    0x00000000       0xef ..\obj\messages.o
+ .debug_line    0x000000ef      0x119 ..\obj\task_lcd.o
+ .debug_line    0x00000208      0x18d ..\obj\main.o
+ .debug_line    0x00000395       0xd9 ..\obj\time_functions.o
+ .debug_line    0x0000046e      0x1be ..\obj\task_button.o
+ .debug_line    0x0000062c      0x16f ..\obj\gpio.o
+ .debug_line    0x0000079b      0x110 ..\obj\swtimers.o
+ .debug_line    0x000008ab       0xc7 ..\obj\task_rtc.o
+ .debug_line    0x00000972      0x28a ..\obj\lcd.o
+ .debug_line    0x00000bfc       0xeb ..\obj\task_set_time.o
+ .debug_line    0x00000ce7       0xde ..\obj\startup_Cortex_M4.o
+ .debug_line    0x00000dc5      0x1b5 ..\obj\systick.o
+
+.debug_str      0x00000000      0x95d
+ .debug_str     0x00000000      0x198 ..\obj\messages.o
+                                0x1ec (size before relaxing)
+ .debug_str     0x00000198       0xb5 ..\obj\task_lcd.o
+                                0x1d7 (size before relaxing)
+ .debug_str     0x0000024d       0xe2 ..\obj\main.o
+                                0x204 (size before relaxing)
+ .debug_str     0x0000032f       0x90 ..\obj\time_functions.o
+                                0x1a3 (size before relaxing)
+ .debug_str     0x000003bf       0xa1 ..\obj\task_button.o
+                                0x1d4 (size before relaxing)
+ .debug_str     0x00000460       0x7d ..\obj\gpio.o
+                                0x19e (size before relaxing)
+ .debug_str     0x000004dd       0xc7 ..\obj\swtimers.o
+                                0x1f0 (size before relaxing)
+ .debug_str     0x000005a4       0x84 ..\obj\task_rtc.o
+                                0x1a5 (size before relaxing)
+ .debug_str     0x00000628      0x135 ..\obj\lcd.o
+                                0x268 (size before relaxing)
+ .debug_str     0x0000075d       0x93 ..\obj\task_set_time.o
+                                0x1b5 (size before relaxing)
+ .debug_str     0x000007f0       0xed ..\obj\startup_Cortex_M4.o
+                                0x184 (size before relaxing)
+ .debug_str     0x000008dd       0x80 ..\obj\systick.o
+                                0x1e0 (size before relaxing)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e ..\obj\messages.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f ..\obj\task_lcd.o
+ .comment       0x0000006e       0x6f ..\obj\main.o
+ .comment       0x0000006e       0x6f ..\obj\time_functions.o
+ .comment       0x0000006e       0x6f ..\obj\task_button.o
+ .comment       0x0000006e       0x6f ..\obj\gpio.o
+ .comment       0x0000006e       0x6f ..\obj\swtimers.o
+ .comment       0x0000006e       0x6f ..\obj\task_rtc.o
+ .comment       0x0000006e       0x6f ..\obj\lcd.o
+ .comment       0x0000006e       0x6f ..\obj\task_set_time.o
+ .comment       0x0000006e       0x6f ..\obj\startup_Cortex_M4.o
+ .comment       0x0000006e       0x6f ..\obj\systick.o
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\messages.o
+ .ARM.attributes
+                0x00000033       0x33 ..\obj\task_lcd.o
+ .ARM.attributes
+                0x00000066       0x33 ..\obj\main.o
+ .ARM.attributes
+                0x00000099       0x33 ..\obj\time_functions.o
+ .ARM.attributes
+                0x000000cc       0x33 ..\obj\task_button.o
+ .ARM.attributes
+                0x000000ff       0x33 ..\obj\gpio.o
+ .ARM.attributes
+                0x00000132       0x33 ..\obj\swtimers.o
+ .ARM.attributes
+                0x00000165       0x33 ..\obj\task_rtc.o
+ .ARM.attributes
+                0x00000198       0x33 ..\obj\lcd.o
+ .ARM.attributes
+                0x000001cb       0x33 ..\obj\task_set_time.o
+ .ARM.attributes
+                0x000001fe       0x33 ..\obj\startup_Cortex_M4.o
+ .ARM.attributes
+                0x00000231       0x33 ..\obj\systick.o
+
+.debug_frame    0x00000000      0x5a4
+ .debug_frame   0x00000000       0xb0 ..\obj\messages.o
+ .debug_frame   0x000000b0       0x74 ..\obj\task_lcd.o
+ .debug_frame   0x00000124       0x2c ..\obj\main.o
+ .debug_frame   0x00000150       0x58 ..\obj\time_functions.o
+ .debug_frame   0x000001a8       0x54 ..\obj\task_button.o
+ .debug_frame   0x000001fc       0x38 ..\obj\gpio.o
+ .debug_frame   0x00000234       0xac ..\obj\swtimers.o
+ .debug_frame   0x000002e0       0x34 ..\obj\task_rtc.o
+ .debug_frame   0x00000314      0x180 ..\obj\lcd.o
+ .debug_frame   0x00000494       0x34 ..\obj\task_set_time.o
+ .debug_frame   0x000004c8       0x4c ..\obj\startup_Cortex_M4.o
+ .debug_frame   0x00000514       0x90 ..\obj\systick.o

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=Assignment3_LED.map -O0 --gc-sections -LC:\CoIDE\configuration\ProgramData\Assignment3_LED -TC:\CoIDE\configuration\ProgramData\Assignment3_LED/arm-gcc-link.ld -g">
+      <target file="Assignment3_LED.elf" lastModified="1531df693a2">
+         <source file="..\obj\messages.o" lastModified="1531d8b0edd"/>
+         <source file="..\obj\task_lcd.o" lastModified="1531df3b0c4"/>
+         <source file="..\obj\main.o" lastModified="1531df6915e"/>
+         <source file="..\obj\time_functions.o" lastModified="1531de065e3"/>
+         <source file="..\obj\task_button.o" lastModified="1531dd0aa07"/>
+         <source file="..\obj\gpio.o" lastModified="1531d8b103f"/>
+         <source file="..\obj\swtimers.o" lastModified="1531d8b107e"/>
+         <source file="..\obj\task_rtc.o" lastModified="1531df691a8"/>
+         <source file="..\obj\lcd.o" lastModified="1531d8b10f8"/>
+         <source file="..\obj\task_set_time.o" lastModified="1531dd0aa78"/>
+         <source file="..\obj\startup_Cortex_M4.o" lastModified="1531d8b115c"/>
+         <source file="..\obj\systick.o" lastModified="1531d8b119a"/>
+      </target>
+   </processor>
+</history>

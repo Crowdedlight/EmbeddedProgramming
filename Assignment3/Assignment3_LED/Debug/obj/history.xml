@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DM4 -I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine -I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine\Assignment3_LED -I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine\inc -I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester">
+      <target file="startup_Cortex_M4.o" lastModified="1531d8b115c">
+         <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1530d37a968"/>
+      </target>
+      <target file="systick.o" lastModified="1531d8b119a">
+         <source file="..\..\..\systick.c" lastModified="14b8c4c0800"/>
+      </target>
+      <target file="task_rtc.o" lastModified="1531df691a8">
+         <source file="..\..\..\task_rtc.c" lastModified="1531df646d7"/>
+      </target>
+      <target file="main.o" lastModified="1531df6915e">
+         <source file="..\..\..\main.c" lastModified="1531df6869a"/>
+      </target>
+      <target file="lcd.o" lastModified="1531d8b10f8">
+         <source file="..\..\..\lcd.c" lastModified="1531d66e8e8"/>
+      </target>
+      <target file="task_button.o" lastModified="1531dd0aa07">
+         <source file="..\..\..\task_button.c" lastModified="1531dcf6b20"/>
+      </target>
+      <target file="gpio.o" lastModified="1531d8b103f">
+         <source file="..\..\..\gpio.c" lastModified="1531d8669c9"/>
+      </target>
+      <target file="task_lcd.o" lastModified="1531df3b0c4">
+         <source file="..\..\..\task_lcd.c" lastModified="1531dee2e82"/>
+      </target>
+      <target file="messages.o" lastModified="1531d8b0edd">
+         <source file="..\..\..\messages.c" lastModified="1531d853377"/>
+      </target>
+      <target file="time_functions.o" lastModified="1531de065e3">
+         <source file="..\..\..\time_functions.c" lastModified="1531de058e9"/>
+      </target>
+      <target file="task_set_time.o" lastModified="1531dd0aa78">
+         <source file="..\..\..\task_set_time.c" lastModified="1531dd0a833"/>
+      </target>
+      <target file="swtimers.o" lastModified="1531d8b107e">
+         <source file="..\..\..\swtimers.c" lastModified="1531cc6bd60"/>
+      </target>
+   </processor>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DM4 -IC:\Users\lille\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine\Assignment3_LED -IC:\Users\lille\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine -IC:\Users\lille\Dropbox\Projektgruppe 4. semester">
+      <target file="leds.o" lastModified="1530fa21780">
+         <source file="..\..\..\leds.c" lastModified="14ba360ff50"/>
+      </target>
+      <target file="button.o" lastModified="1530fa2160a">
+         <source file="..\..\..\button.c" lastModified="1530f415577"/>
+      </target>
+   </processor>
+</history>

@@ -138,7 +138,7 @@ int main(void)
     			// Reset Timer
     			click_counter = 0;
     		}
-    		else if (button_presses == 1 && click_counter < 100) // Double Click
+    		else if (button_presses == 1 && click_counter < 40) // Double Click
     		{
     			//If second press = double click
     			doubleClick(&color_dic);
@@ -159,7 +159,7 @@ int main(void)
     		for (int i = 0; i < 1000; i++);
 
     	}
-    	else if (button_presses == 1 && click_counter > 120 && !swu_pushed) // One press
+    	else if (button_presses == 1 && click_counter > 45 && !swu_pushed) // One press
     	{
     		//Have been pressed once, but not as a double click.
     		//Do one click and reset
@@ -197,12 +197,12 @@ void oneClick()
 	if (currentColor == 8)
 	    {
 	    //stay at 7
-		currentColor = 7;
+		currentColor = 0;
 	    }
 	else if (currentColor == -1)
 	{
 		//Stay at 0
-		currentColor = 0;
+		currentColor = 7;
 	}
 	else {
 		//Display color

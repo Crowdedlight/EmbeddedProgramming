@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine /I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine\Assignment3_LED /I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine\inc /I..\..\..\..\Users\sunes\Dropbox\Projektgruppe 4. semester">
+      <source file="..\..\..\..\inc\tm4c123gh6pm.h" lastModified="1529cdd9790">
+      </source>
+      <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1530d37a968">
+      </source>
+      <source file="..\..\..\task_lcd.h" lastModified="1531d886fe5">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+         <include file="..\..\..\events.h"/>
+         <include file="..\..\..\tmodel.h"/>
+         <include file="..\..\..\messages.h"/>
+         <include file="..\..\..\swtimers.h"/>
+         <include file="..\..\..\lcd.h"/>
+      </source>
+      <source file="..\..\..\events.h" lastModified="1531d2d7ddf">
+      </source>
+      <source file="..\..\..\lcd.h" lastModified="1531d894f36">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+      </source>
+      <source file="..\..\..\task_lcd.c" lastModified="1531dee2e82">
+         <include file="..\..\..\task_lcd.h"/>
+      </source>
+      <source file="..\..\..\time_functions.h" lastModified="1531d88dbd6">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+         <include file="..\..\..\swtimers.h"/>
+         <include file="..\..\..\tmodel.h"/>
+         <include file="..\..\..\messages.h"/>
+      </source>
+      <source file="..\..\..\lcd.c" lastModified="1531d66e8e8">
+         <include file="..\..\..\lcd.h"/>
+      </source>
+      <source file="..\..\..\time_functions.c" lastModified="1531de058e9">
+         <include file="..\..\..\time_functions.h"/>
+      </source>
+      <source file="..\..\..\swtimers.h" lastModified="1531d882e0b">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+      </source>
+      <source file="..\..\..\task_set_time.h" lastModified="1531d889da7">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+         <include file="..\..\..\time_functions.h"/>
+         <include file="..\..\..\task_button.h"/>
+         <include file="..\..\..\events.h"/>
+         <include file="..\..\..\messages.h"/>
+         <include file="..\..\..\tmodel.h"/>
+      </source>
+      <source file="..\..\..\systick.h" lastModified="14b680f5be0">
+      </source>
+      <source file="..\..\..\gpio.h" lastModified="1531d86686f">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+      </source>
+      <source file="..\..\..\messages.h" lastModified="1531d8813c3">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+      </source>
+      <source file="..\..\..\swtimers.c" lastModified="1531cc6bd60">
+         <include file="..\..\..\emp_type.h"/>
+         <include file="..\..\..\events.h"/>
+         <include file="..\..\..\messages.h"/>
+      </source>
+      <source file="..\..\..\systick.c" lastModified="14b8c4c0be8">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+      </source>
+      <source file="..\..\..\task_set_time.c" lastModified="1531dd0a833">
+         <include file="..\..\..\task_set_time.h"/>
+      </source>
+      <source file="..\..\..\task_button.h" lastModified="1531d884c88">
+         <include file="..\..\..\..\inc\tm4c123gh6pm.h"/>
+         <include file="..\..\..\emp_type.h"/>
+         <include file="..\..\..\events.h"/>
+         <include file="..\..\..\swtimers.h"/>
+         <include file="..\..\..\tmodel.h"/>
+         <include file="..\..\..\messages.h"/>
+      </source>
+      <source file="..\..\..\messages.c" lastModified="1531d853377">
+         <include file="..\..\..\messages.h"/>
+      </source>
+      <source file="..\..\..\gpio.c" lastModified="1531d8669c9">
+         <include file="..\..\..\gpio.h"/>
+      </source>
+      <source file="..\..\..\task_button.c" lastModified="1531dcf6b20">
+         <include file="..\..\..\task_button.h"/>
+      </source>
+      <source file="..\..\..\emp_type.h" lastModified="152c1229880">
+      </source>
+      <source file="..\..\..\tmodel.h" lastModified="1531da38e2b">
+      </source>
+   </includePath>
+   <includePath signature="/IC:\Users\lille\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine\Assignment3_LED /IC:\Users\lille\Dropbox\Projektgruppe 4. semester\SuperHemmeligStedUdenBaileyOgKatrine /IC:\Users\lille\Dropbox\Projektgruppe 4. semester">
+      <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1530d37a9b4">
+      </source>
+      <source file="..\..\..\systick.h" lastModified="14b680f5be0">
+      </source>
+      <source file="..\..\..\emp_type.h" lastModified="152c12299fb">
+      </source>
+   </includePath>
+   <includePath signature="/I..\..\.. /I..\..\..\workspace\Assignment3_LED /I..\..\..\workspace">
+      <source file="..\..\..\cmsisboot\startup\startup_Cortex_M4.c" lastModified="1530d37a9b4">
+      </source>
+      <source file="..\..\..\systick.h" lastModified="14b680f5be0">
+      </source>
+      <source file="..\..\..\emp_type.h" lastModified="152c12299fb">
+      </source>
+   </includePath>
+</dependencies>
